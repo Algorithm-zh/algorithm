@@ -17,7 +17,7 @@ void QuikSort(int q[], int l, int r)
   //要注意这里到底是写i - 1还是写成j,取决于上面x = q[r]还是x = q[l],因为有无限循环的问题
   //如果写成j,而q[r] > q[l....r - 1], 则经过一个while j还是为r, 那么就会死循环
   QuikSort(q, l, i - 1);
-  QuikSort(q, i, r);
+  QuikSort(q, i, r);//j + 1
 }
 #if 1
 int main()
