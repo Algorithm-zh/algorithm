@@ -23,15 +23,29 @@ int query(int x)
     int u = x >> i & 1;
     if(son[p][!u])
     {
-      p = son[p][!u];
       ans = ans * 2 + !u;
-    }
-    else
+      p = son[p][!u];
+    }else
     {
-      p = son[p][u];
       ans = ans * 2 + u;
+      p = son[p][u];
     }
   }
-  return x ^ ans;//异或值
+  return x ^ ans;
+}
+int main()
+{
+  int n, ans = 0;
+  int x;
+  cin >> n;
+  for(int i = 0; i < n; i ++) 
+  {
+    cin >> x;
+    insert(x);
+    ans = max(ans, query(x));
+  }
+  cout << ans;
+
+  return 0;
 }
 
