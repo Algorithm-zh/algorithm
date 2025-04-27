@@ -22,7 +22,7 @@ int Dijkstra()
   memset(dist, 0x3f, sizeof dist);
   dist[1] = 0;
   q.push({0, 1});
-  while(!q.empty())
+  while(!q.empty())//因为就是找n-1个点到原点的距离，所以其实就是遍历n次(重复加入的点都跳过了)
   {
     auto [distance, x] = q.top();q.pop();
     //该点之前已经使用过，跳过
